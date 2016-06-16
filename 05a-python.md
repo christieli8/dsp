@@ -21,7 +21,6 @@ How are Python lists and tuples similar and different? Which will work as keys i
 How are Python lists and sets similar and different? Give examples of using both. How does performance compare between lists and sets for finding an element. Why?
 
 >> Sets are unordered collections of unqiue elements while lists are ordered collections of elements allowing duplicates. Sets allows you to do operations such as intersection, union, difference, and symmetric difference and sets are not indexed. List elements can be accessed by index while in order to find an element in a set, a hash lookup is used. This makes __contains__ (in operator) a lot more efficient for sets than lists.
-
 Lists: 
 list1 = ['physics', 'chemistry', 1997, 2000];
 list2 = [1, 2, 3, 4, 5, 6, 7 ];
