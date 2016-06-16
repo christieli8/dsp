@@ -52,8 +52,51 @@ Describe Python's `lambda`. What is it, and what is it used for? Give at least o
 ###Q4. List Comprehension, Map &amp; Filter
 
 Explain list comprehensions. Give examples and show equivalents with `map` and `filter`. How do their capabilities compare? Also demonstrate set comprehensions and dictionary comprehensions.
+The simplest form of a list comprehension is
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+[ expression-involving-loop-variable for loop-variable in sequence ]
+This will step over every element of sequence, successively setting loop-variable equal to every element one at a time, and will then build up a list by evaluating expression-involving-loop-variable for each one. This eliminates the need to use lambda forms, and thus generally produces a much more readable code than using map() and a more compact code than using a for-loop.
+squares = list(map(lambda x: x**2, range(10)))
+[(x, y) for x in [1,2,3] for y in [3,1,4] if x != y]
+[(x, x**2) for x in range(6)]
+
+>>> def square(x):
+...     return x**2
+...
+>>> squares = map(square, range(10))
+>>> print squares
+[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+
+>>> squares = [] # start with an empty list
+>>> for x in range(10): # step over every element in the list of integers from 0 to 9
+...     squares.append(x**2)
+>>> squares = map(lambda x: x**2, range(10))
+>>> print squares
+[0, 1, 4, 9, 16, 25, 36, 49, 64, 81
+
+Filter takes a function returning True or False and applies it to a sequence, returning a list of only those members of the sequence for which the function returned True.
+
+>>> squares = map(lambda x: x**2, range(10))
+>>> special_squares = filter(lambda x: x > 5 and x < 50, squares)
+>>> print special_squares
+[9, 16, 25, 36, 49]
+
+>>> special_squares = []
+>>> for x in range(10):
+...     square = x**2
+...     if square > 5 and square < 50:
+...         special_squares.append(square)
+...
+>>> print special_squares
+[9, 16, 25, 36, 49]
+
+List comprehensions can be nested, in which case they take on the following form:
+
+[ expression-involving-loop-variables for outer-loop-variable in outer-sequence for inner-loop-variable in inner-sequence ]
+results = []
+for outer_loop_variable in outer_sequence:
+    for inner_loop_variable in inner_sequence:
+        results.append( expression_involving_loop_variables )
 
 ---
 
