@@ -45,7 +45,16 @@ print employees
 
 Describe Python's `lambda`. What is it, and what is it used for? Give at least one example, including an example of using a `lambda` in the `key` argument to `sorted`.
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> Python supports the creation of anonymous functions (i.e. functions that are not bound to a name) at runtime, using a construct called "lambda".Lambda forms can be used as the required function argument to other functions. 
+```python 
+student_tuples = [
+        ('john', 'A', 15),
+        ('jane', 'B', 12),
+        ('dave', 'B', 10),
+]
+sorted(student_tuples, key=lambda student: student[2])   # sort by age
+[('dave', 'B', 10), ('jane', 'B', 12), ('john', 'A', 15)]
+```
 
 ---
 
@@ -55,41 +64,12 @@ Explain list comprehensions. Give examples and show equivalents with `map` and `
 The simplest form of a list comprehension is
 
 [ expression-involving-loop-variable for loop-variable in sequence ]
-This will step over every element of sequence, successively setting loop-variable equal to every element one at a time, and will then build up a list by evaluating expression-involving-loop-variable for each one. This eliminates the need to use lambda forms, and thus generally produces a much more readable code than using map() and a more compact code than using a for-loop.
-squares = list(map(lambda x: x**2, range(10)))
-[(x, y) for x in [1,2,3] for y in [3,1,4] if x != y]
-[(x, x**2) for x in range(6)]
+This will step over every element of sequence, successively setting loop-variable equal to every element one at a time, and will then build up a list by evaluating expression-involving-loop-variable for each one. 
 
->>> def square(x):
-...     return x**2
-...
->>> squares = map(square, range(10))
->>> print squares
-[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
-
->>> squares = [] # start with an empty list
->>> for x in range(10): # step over every element in the list of integers from 0 to 9
-...     squares.append(x**2)
->>> squares = map(lambda x: x**2, range(10))
->>> print squares
-[0, 1, 4, 9, 16, 25, 36, 49, 64, 81
-
-Filter takes a function returning True or False and applies it to a sequence, returning a list of only those members of the sequence for which the function returned True.
-
->>> squares = map(lambda x: x**2, range(10))
->>> special_squares = filter(lambda x: x > 5 and x < 50, squares)
->>> print special_squares
-[9, 16, 25, 36, 49]
-
->>> special_squares = []
->>> for x in range(10):
-...     square = x**2
-...     if square > 5 and square < 50:
-...         special_squares.append(square)
-...
->>> print special_squares
-[9, 16, 25, 36, 49]
-
+```python 
+squares = [x**2 for x in range(10)]
+squares = map(lambda x: x**2, range(10))
+```
 List comprehensions can be nested, in which case they take on the following form:
 
 [ expression-involving-loop-variables for outer-loop-variable in outer-sequence for inner-loop-variable in inner-sequence ]
@@ -97,7 +77,24 @@ results = []
 for outer_loop_variable in outer_sequence:
     for inner_loop_variable in inner_sequence:
         results.append( expression_involving_loop_variables )
+Filter takes a function returning True or False and applies it to a sequence, returning a list of only those members of the sequence for which the function returned True.
 
+```python 
+squares = map(lambda x: x**2, range(10))
+special_squares = filter(lambda x: x > 5 and x < 50, squares)
+print special_squares
+[9, 16, 25, 36, 49]
+special_squares = [ x**2 for x in range(10) if x**2 > 5 and x**2 < 50 ]
+```
+
+set comprehension: 
+>>> a = {x for x in 'abracadabra' if x not in 'abc'}
+>>> a
+{'r', 'd'}
+
+dictionary comprehension 
+>>> {x: x**2 for x in (2, 4, 6)}
+{2: 4, 4: 16, 6: 36}
 ---
 
 ###Complete the following problems by editing the files below:
