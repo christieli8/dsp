@@ -15,7 +15,13 @@ def match_ends(words):
     >>> match_ends(['aaa', 'be', 'abc', 'hello'])
     1
     """
-    raise NotImplementedError
+     count = 0
+    for w in words:
+      if len(w) > 2:
+        continue
+      if w[0] == w[-1]:
+        count += 1
+    return count
 
 
 def front_x(words):
@@ -32,7 +38,16 @@ def front_x(words):
     >>> front_x(['mix', 'xyz', 'apple', 'xanadu', 'aardvark'])
     ['xanadu', 'xyz', 'aardvark', 'apple', 'mix']
     """
-    raise NotImplementedError
+    starts_with_x = []
+    starts_without_x = []
+    for w in words:
+      if w.startswith("x"):
+        starts_with_x.append(w)
+      else:
+        starts_without_x.append(w)
+    starts_with_x.sort()
+    starts_without_x.sort()
+    return starts_with_x + starts_without_x
 
 
 def sort_last(tuples):
@@ -49,7 +64,7 @@ def sort_last(tuples):
     >>> sort_last([(1, 7), (1, 3), (3, 4, 5), (2, 2)])
     [(2, 2), (1, 3), (3, 4, 5), (1, 7)]
     """
-    raise NotImplementedError
+    return sorted(tuples, key=lambda x: x[-1])
 
 
 def remove_adjacent(nums):
@@ -68,7 +83,14 @@ def remove_adjacent(nums):
     >>> remove_adjacent([])
     []
     """
-    raise NotImplementedError
+    results = []
+    previous = None
+    for n in nums:
+      if previous == n:
+        continue
+      previous = n
+      results.append(n)
+    return results
 
 
 def linear_merge(list1, list2):
@@ -85,4 +107,25 @@ def linear_merge(list1, list2):
     >>> linear_merge(['aa', 'aa'], ['aa', 'bb', 'bb'])
     ['aa', 'aa', 'aa', 'bb', 'bb']
     """
-    raise NotImplementedError
+    results = []
+    size1 = len(list1)
+    size2 = len(list2)
+    index1 = 0
+    index2 = 0
+    while index1 < size1 or index2 < size2:
+      e1 = list1[index1] if index1 < size1 else None
+      e2 = list2[index2] if index2 < size2 else None
+      if e1 is None:
+        results.append(e2)
+        index2 += 1
+      elif e2 is None:
+        results.append(e1)
+        index1 += 1
+      else:
+        if e1 < e2:
+          results.append(e1)
+          index1 += 1
+        else:
+          results.append(e2)
+          index2 += 1
+    return results
