@@ -53,7 +53,14 @@ What do the following commands do:
 
 Explore these other [ls options](http://www.techonthenet.com/unix/basic/ls.php) and pick 5 of your favorites:
 
-> > REPLACE THIS TEXT WITH YOUR RESPONSE
+> > ```
+-g	Displays the long format listing, but exclude the owner name.
+-l	Displays the long format listing.
+-L	Displays the file or directory referenced by a symbolic link.
+-p Displays directories with /
+-u	Displays files by the file access time.
+```
+ 
 
 ---
 
