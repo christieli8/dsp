@@ -7,3 +7,4 @@ with open("/Users/christieli/Desktop/pre-work/dsp/python/faculty.csv", "rb") as 
     email = row[" email"]
     outfile.write(email + "\n")
 outfile.close()
+
