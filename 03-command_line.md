@@ -13,7 +13,17 @@ these in a couple of hours.
 
 Make a cheat sheet for yourself: a list of at least **ten** commands and what they do, focused on things that are new, interesting, or otherwise worth remembering.
 
-> > REPLACE THIS TEXT WITH YOUR RESPONSE
+> > ```
+Christies-MBP:learning christieli$ vim Readme.txt  # wirte a vim file and open 
+Christies-MBP:learning christieli$ open Readme.txt
+Christies-MBP:Desktop christieli$ cd "i have fun"  # open file name with space 
+Christies-MBP:temp christieli$ rm -rf new   #recursive deletion 
+Christies-MBP:temp christieli$ cat *.txt > big.txt   #cat files 
+Christies-MBP:~ christieli$ find . -name "*.txt" -print |less   # find and open file 
+Christies-MBP:temp christieli$ grep new *.txt   # search file 
+Christies-MBP:temp christieli$ man    # help 
+Christies-MBP:Desktop christieli$ ipython notebook   # open ipython notebook
+Christies-MBP:Desktop christieli$ spyder    # open spyder 
 
 ---
 
@@ -28,7 +38,14 @@ What do the following commands do:
 `ls -t`  
 `ls -Glp`  
 
-> > REPLACE THIS TEXT WITH YOUR RESPONSE
+> > ```
+`ls`  # ls list files and diretories 
+`ls -a`  # ls -a: list with hidden files/directories
+`ls -l`  # ls -l, long listing format 
+`ls -lh`  # ls -lh, long listing format with file size in human readable form 
+`ls -lah`  # ls -lah  get a line by line display with all files being displayed (include hidden ones), and human readable filesizes 
+`ls -t`  # List sorted by time/date
+`ls -Glp` # long list format color coded 
 
 ---
 
