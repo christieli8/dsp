@@ -77,10 +77,6 @@ squares = map(lambda x: x**2, range(10))
 List comprehensions can be nested, in which case they take on the following form:
 
 [ expression-involving-loop-variables for outer-loop-variable in outer-sequence for inner-loop-variable in inner-sequence ]
-results = []
-for outer_loop_variable in outer_sequence:
-    for inner_loop_variable in inner_sequence:
-        results.append( expression_involving_loop_variables )
 Filter takes a function returning True or False and applies it to a sequence, returning a list of only those members of the sequence for which the function returned True.
 
 ```python 
