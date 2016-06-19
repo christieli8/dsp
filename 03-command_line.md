@@ -70,7 +70,7 @@ What does `xargs` do? Give an example of how to use it.
 
 > > Xargs builds and executes command lines by gathering together arguments . 
 Christies-MBP:Desktop christieli$ find . -name '*at' -print | xargs rm -rf 
-finds and deletes files 
+finds and deletes files  
 
  
 
