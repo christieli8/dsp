@@ -16,4 +16,6 @@ biased = BiasPmf(pmf, label='biased')
 thinkplot.PrePlot(2)
 thinkplot.Pmfs([pmf, biased])
 thinkplot.Show()
+pmf.Mean()
+biased.Mean()
 ```
