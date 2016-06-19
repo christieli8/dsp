@@ -84,7 +84,7 @@ p(identical twins & twin brother ) = p(identical twins)p(both boys|identical twi
 How do frequentist and Bayesian statistics compare?
 
 >> Bayesian probability belongs to the category of evidential probabilities; to evaluate the probability of a hypothesis, the Bayesian probabilist specifies some prior probability, which is then updated to a posterior probability in the light of new, relevant data (evidene) The Bayesian interpretation provides a standard set of procedures and formulae to perform this calculation.
- Frequentist is a standard interpretation of probability; it defines an event's probability as the limit of its relative frequency in a large number of trials. 
+ Frequentist is a standard interpretation of probability; it defines an event's probability as the limit of its relative frequency in a large number of trials.  
 
 ---
 
