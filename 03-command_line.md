@@ -68,7 +68,9 @@ Explore these other [ls options](http://www.techonthenet.com/unix/basic/ls.php) 
 
 What does `xargs` do? Give an example of how to use it.
 
-> > REPLACE THIS TEXT WITH YOUR RESPONSE
+> > Xargs builds and executes command lines by gathering together arguments . 
+Christies-MBP:Desktop christieli$ find . -name '*at' -print | xargs rm -rf 
+finds and deletes files 
 
  
 
